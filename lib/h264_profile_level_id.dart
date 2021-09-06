@@ -183,7 +183,7 @@ class H264Utils {
     return (level_asymmetry_allowed == 1 || level_asymmetry_allowed == '1');
   }
 
-  static ProfileLevelId? parseSdpProfileLevelId(Map<dynamic, dynamic> params) {
+  static ProfileLevelId? parseSdpProfileLevelId({Map<dynamic, dynamic> params = const {}}) {
     var profile_level_id = params['profile-level-id'];
 
     return profile_level_id == null
@@ -192,8 +192,8 @@ class H264Utils {
   }
 
   static bool isSameProfile(Map<dynamic, dynamic> params1, Map<dynamic, dynamic> params2) {
-    final ProfileLevelId? profile_level_id_1 = parseSdpProfileLevelId(params1);
-    final ProfileLevelId? profile_level_id_2 = parseSdpProfileLevelId(params2);
+    final ProfileLevelId? profile_level_id_1 = parseSdpProfileLevelId(params: params1);
+    final ProfileLevelId? profile_level_id_2 = parseSdpProfileLevelId(params: params2);
 
     return profile_level_id_1 != null && profile_level_id_2 != null && profile_level_id_1.profile == profile_level_id_2.profile;
   }
@@ -287,8 +287,8 @@ class H264Utils {
     }
 
     // Parse profile-level-ids.
-    final ProfileLevelId? local_profile_level_id = parseSdpProfileLevelId(local_supported_params);
-    final ProfileLevelId? remote_profile_level_id = parseSdpProfileLevelId(remote_offered_params);
+    final ProfileLevelId? local_profile_level_id = parseSdpProfileLevelId(params: local_supported_params);
+    final ProfileLevelId? remote_profile_level_id = parseSdpProfileLevelId(params: remote_offered_params);
 
     // The local and remote codec must have valid and equal H264 Profiles.
     if (local_profile_level_id == null) {

@@ -1,5 +1,5 @@
-# h264-profile-level-id
-Dart utility to process H264 profile-level-id values
+# h264_profile_level_id
+Dart utility to process H264 profile-level-id values based on Google's libwebrtc C++ code.
 
 ## API
 
@@ -39,7 +39,7 @@ H264Utils. => {
   generateProfileLevelIdForAnswer
 };
 // Class.
-ProfileLevelId,
+ProfileLevelId
 ```
 
 ### ProfileLevelId
