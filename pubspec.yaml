@@ -1,13 +1,11 @@
 name: h264_profile_level_id
 description: Dart utility to process H264 profile-level-id values based on Google's libwebrtc C++ code.
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/Blancduman/h264-profile-level-id
 repository: https://github.com/Blancduman/h264-profile-level-id
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
+  test: ^1.24.3

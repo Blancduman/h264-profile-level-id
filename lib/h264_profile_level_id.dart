@@ -114,9 +114,9 @@ class H264Utils {
       return null;
     }
 
-    final int profile_level_id_numeric = int.parse(str, radix: 16);
+    final int? profile_level_id_numeric = int.tryParse(str, radix: 16);
 
-    if (profile_level_id_numeric == 0) {
+    if (profile_level_id_numeric == 0 || profile_level_id_numeric == null) {
       return null;
     }
 
